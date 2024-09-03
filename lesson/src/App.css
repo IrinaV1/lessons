@@ -1,7 +1,12 @@
 .App {
   margin: 20px auto;
+  padding: 5px 15px 20px;
   text-align: center;
-  width: 50%;
+  max-width: 800px;
+  width: 65%;
+  border-radius: 10px;
+  background-color: #06234e;
+  color: #fff;
 }
 
 
@@ -20,4 +25,25 @@
 
 .App-link {
   color: #61dafb;
+}
+.items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.item-task{
+  width: 45%;
+  padding: 5PX;
+  text-align: start;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray;
 }

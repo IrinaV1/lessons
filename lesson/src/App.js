@@ -5,14 +5,19 @@ import './App.css';
 function App() {
 
 const [task, setTask] = useState('');
-
+const [tasks, setTasks] = useState([]);
 
 const handleInputChange = (event) => {
   setTask(event.target.value);
 }
 
 const handleAddTask = () => {
+  if (task.trim() !== '') {
+    setTasks([...tasks, { text: task, completed: false }]);
+    setTask('');
+  }
   setTask('')
+  
 }
 
   return (
@@ -23,14 +28,19 @@ const handleAddTask = () => {
     onChange={handleInputChange}
     />
     <button onClick={handleAddTask}>OK</button>
-  <ul className="items">
-    <li className="item"> hvkjgbkj
+    <ul className="items">
+ {tasks.map((task,index) => (
+ 
+    <li className="item" key={index}> 
+    <span className='item-task'>{task.text}</span>
       <div>
-      <button>DONE</button>
-      <button>DELETE</button>
+      <button onClick={() => {}}>DONE</button>
+      <button onClick={() => {}}>DELETE</button>
       </div>
     </li>
-  </ul>
+  
+ ))} 
+ </ul>
  
     </div>
   );
