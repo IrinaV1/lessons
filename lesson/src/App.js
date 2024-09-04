@@ -20,6 +20,18 @@ const handleAddTask = () => {
   
 }
 
+const handleCompleteTask = (index) => {
+  const newTasks = tasks.map((t, i) =>
+    i === index ? { ...t, completed: !t.completed } : t
+  );
+  setTasks(newTasks);
+};
+
+const handleDelTask = (index) => {
+  const newTasks = tasks.filter((_, i) => i !== index);
+  setTasks(newTasks);
+}
+
   return (
     <div className="App">
     <h1>Hello,To-Do List</h1>
@@ -34,8 +46,8 @@ const handleAddTask = () => {
     <li className="item" key={index}> 
     <span className='item-task'>{task.text}</span>
       <div>
-      <button onClick={() => {}}>DONE</button>
-      <button onClick={() => {}}>DELETE</button>
+      <button onClick={() => handleCompleteTask(index)}> {task.completed ? 'UNDO' : 'DONE'}</button>
+      <button onClick={() => handleDelTask(index)}>DELETE</button>
       </div>
     </li>
   
