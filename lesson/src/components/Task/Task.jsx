@@ -1,6 +1,6 @@
 
 import React, {useState, useEffect} from 'react';
-
+import '../../App.css';
 
 
 
@@ -17,13 +17,13 @@ const [tasks, setTasks] = useState([]);
     }
   }, []);
 
-  // Сохранение задач в localStorage при изменении списка задач
+
   useEffect(() => {
-   if (tasks.length > 0 || - 1) {
+   if (tasks.length > 0)  {
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }, [tasks]);
-
+console.log(tasks)
 
 const handleInputChange = (event) => {
     setTask(event.target.value);
@@ -50,14 +50,14 @@ const handleInputChange = (event) => {
 
 
   return (
-    <div>
+    <div className='wrapper'>
        <h1>Hello,To-Do List</h1>
     <input type="text" 
     value={task}
     onChange={handleInputChange}
 
     />
-    <button onClick={handleAddTask}>OK</button>
+    <button className='ok' onClick={handleAddTask}>OK</button>
 
     <ul className="items">
  {tasks.map((task,index) => (

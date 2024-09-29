@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+ 
+}
+
 .App {
   margin: 20px auto;
   padding: 5px 15px 20px;
@@ -8,9 +14,14 @@
   background-color: #06234e;
   color: #fff;
 }
+.wrapper{
+  margin: 20px auto;
+  padding: 2px;
+}
 
-
-
+h1{
+  margin: 5px auto;
+}
 
 .App-header {
   background-color: #282c34;
@@ -23,6 +34,18 @@
   color: white;
 }
 
+input{
+  border-radius: 5px ;
+  padding: 5px;
+  margin: 5px 5px;
+  border: none;
+}
+.ok{
+  border-radius: 5px ;
+  padding: 5px;
+  margin: 5px 5px;
+  border: none;
+}
 .App-link {
   color: #61dafb;
 }
@@ -42,8 +65,7 @@
   width: 45%;
   padding: 5PX;
   text-align: start;
+  color: #f6f7f8;
 }
-.completed {
-  text-decoration: line-through;
-  color: gray;
-}
+
+
