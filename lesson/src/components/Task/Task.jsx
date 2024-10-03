@@ -48,6 +48,8 @@ const handleInputChange = (event) => {
     setTasks(newTasks);
   }
 
+ 
+
 
   return (
     <div className='wrapper'>
@@ -63,7 +65,10 @@ const handleInputChange = (event) => {
  {tasks.map((task,index) => (
  
     <li className="item" key={index}> 
-    
+    <input  className='inputCheckbox'
+    type='checkbox'
+    checked={task.completed}
+   onChange={() => handleCompleteTask(index)}/>
     <span className='item-task'>{task.text}</span>
       <div>
       <button onClick={() => handleCompleteTask(index)}> {task.completed ? 'UNDO' : 'DONE'}</button>
