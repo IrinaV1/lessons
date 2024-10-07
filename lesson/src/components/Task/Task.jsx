@@ -7,8 +7,9 @@ import '../../App.css';
 const Task = () => {
 
     
-const [task, setTask] = useState('');
+const [task, setTask] = useState ('');
 const [tasks, setTasks] = useState([]);
+
 
   useEffect(() => {
     const savedTasks = localStorage.getItem('tasks');
@@ -23,7 +24,7 @@ const [tasks, setTasks] = useState([]);
       localStorage.setItem('tasks', JSON.stringify(tasks));
     }
   }, [tasks]);
-console.log(tasks)
+
 
 const handleInputChange = (event) => {
     setTask(event.target.value);
@@ -43,6 +44,10 @@ const handleInputChange = (event) => {
     setTasks(newTasks);
   };
   
+
+  const inputCheckbox = (index) => {
+    
+  }
   const handleDelTask = (index) => {
     const newTasks = tasks.filter((_, i) => i !== index);
     setTasks(newTasks);
